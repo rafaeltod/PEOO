@@ -4,4 +4,4 @@ def formatar_nome(nome):
   for palavra in palavras:
       resultado += palavra.capitalize() + ' '
   return resultado.strip()
-print(formatar_nome("julio cesar"))
+print(formatar_nome("rafael tod da silva pereira junior"))

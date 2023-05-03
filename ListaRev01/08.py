@@ -1,0 +1,18 @@
+print("Digite quatro valores inteiros")
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+l = [a, b, c, d]
+maxl = max(l)
+minl = min(l)
+print(f'Maior valor = {maxl}')
+print(f'Menor valor = {minl}')
+maxl = set(l)
+maxl.remove(max(maxl))
+minl = set(l)
+minl.remove(min(minl))
+novomaior = max(maxl)
+novomenor = min(minl)
+soma = novomaior + novomenor
+print(f'A soma do segundo maior valor com o segundo menor = {soma}')
