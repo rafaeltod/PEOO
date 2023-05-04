@@ -1,5 +1,5 @@
 h1, m1 = map(int, input("Digite o primeiro horário no formato hh:mm \n").split(":"))
-h2, m2 = map(int, input("Digite o primeiro horário no formato hh:mm \n").split(":"))
+h2, m2 = map(int, input("Digite o segundo horário no formato hh:mm \n").split(":"))
 
 totalmin = m1 + m2
 totalhrs = h1 + h2
