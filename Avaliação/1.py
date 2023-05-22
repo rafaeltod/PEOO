@@ -5,8 +5,8 @@ class Pais():
         self.__area = 0
 
         self.set_nome(n)
-        self.set_peop(int(p))
-        self.set_area(float(a))
+        self.set_peop(p)
+        self.set_area(a)
 
     def set_nome(self, n):
         if n != "":
@@ -41,29 +41,17 @@ class Pais():
     def __str__(self):
         return f'Pais: {self.__nome} - População: {self.__peop} habitantes - Área: {self.__area} km²'
 
-    def calcular_densidade(pais):
-      return pais.calc_dens()
-
-
 class UI:
-    @staticmethod
-    def main():
-        paises = []
-        for i in range(1, 11):
-            n = input("Nome do país: ")
-            p = int(input("População do país: "))
-            a = float(input("Área do país: "))
-
-            pais = Pais(n, p, a)
-            paises.append(pais)
-
-            print(pais)
-            print(f'Densidade demográfica: {pais.calc_dens():.1f} hab./km²\n')
-
-        pais_maior_densidade = max(paises.calcular_densidade())
-
-        print('Dados do país com maior densidade demográfica:')
-        print(f'Nome: {pais_maior_densidade.get_nome()}\nPopulação: {pais_maior_densidade.get_peop()}\nÁrea: {pais_maior_densidade.get_area():.0f} km²\nDensidade demográfica: {pais_maior_densidade.calc_dens():.1f} hab./km²')
-
-
+  @staticmethod
+  def main():
+    print("Informe nome, população e área do 1º pais")
+    x = Pais(input(), int(input()), float(input()))
+    maior = x
+    for k in range(2, 11):
+      print(f"Informe nome, população e área do {k}º pais")
+      x = Pais(input(), int(input()), float(input()))
+      if (x.calc_dens() > maior.calc_dens()): maior = x
+    print(maior)    
+    print(maior.calc_dens())    
+      
 UI.main()
