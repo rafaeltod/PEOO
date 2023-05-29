@@ -32,7 +32,7 @@ class PeçaDominó:
             return False
 
     def __str__(self):
-        return f'Peça de Dominó: [{self.__l1} | {self.__l2}]'
+        return f'[{self.__l1} | {self.__l2}]'
 
 
 class UI:
@@ -46,8 +46,8 @@ class UI:
         d2 = int(input("Digite o valor para o lado 2 da segunda peça: "))
         peca2 = PeçaDominó(u2, d2)
 
-        print("Primeira peça:", peca1)
-        print("Segunda peça:", peca2)
+        print("Primeira peça: \n", peca1)
+        print("Segunda peça: \n", peca2)
 
         if peca1.combinar(peca2):
             print("As peças combinam.")

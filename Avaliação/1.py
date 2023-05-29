@@ -45,13 +45,23 @@ class UI:
   @staticmethod
   def main():
     print("Informe nome, população e área do 1º pais")
-    x = Pais(input(), int(input()), float(input()))
+    n = input("Informe seu nome: ")
+    p = int(input("Informe a população: "))
+    a = float(input("Informe sua área: "))
+    x = Pais(n, p, a)
+    print(x)
+    print(f'Sua Densidade é {x.calc_dens()} hab/km²')
     maior = x
     for k in range(2, 11):
       print(f"Informe nome, população e área do {k}º pais")
-      x = Pais(input(), int(input()), float(input()))
+      n = input("Informe seu nome: ")
+      p = int(input("Informe a população: "))
+      a = float(input("Informe sua área: "))
+      x = Pais(n, p, a)
+      print(x)
+      print(f'Sua Densidade é {x.calc_dens()} hab/km²')
       if (x.calc_dens() > maior.calc_dens()): maior = x
-    print(maior)    
-    print(maior.calc_dens())    
+    print(f'Dados do país com maior densidade: \n {maior}')    
+    print(f'E sua densidade é {maior.calc_dens()} hab/km²')    
       
 UI.main()
