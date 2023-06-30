@@ -23,5 +23,5 @@ for i in range(1, n + 1):
         soma += 1
       if matriz[i][j+1] == 1:
         soma += 1
-      print(soma, end='', sep='')
+      print(soma, end='')
   print()
