@@ -5,6 +5,7 @@ class Cinema:
 
   def set_dia(self, d):
     ld = ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo']
+    
     if d in ld: self.__dia = d
     else: raise ValueError()
 
