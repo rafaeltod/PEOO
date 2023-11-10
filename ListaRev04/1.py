@@ -30,7 +30,7 @@ class Jogador:
     return self.__gols
 
   def __str__(self):
-    return f'Nome: {self.__nome} | Camisa: Número {self.__camisa} | Gols = {self.__gols}'
+    return f'\nNome: {self.__nome} | Camisa: Número {self.__camisa} | Gols = {self.__gols}'
 
 class Time:
   def __init__(self, nome, estado):
@@ -53,10 +53,7 @@ class Time:
     self.__jogadores.append(jogador)
 
   def listar(self):
-    listados = str()
-    for j in self.__jogadores:
-      listados += f'{str(j)}\n'
-    return listados
+    return self.__jogadores
 
   def artilheiro(self):
     if len(self.__jogadores) == 0: return None
@@ -90,7 +87,7 @@ class UI:
         j = Jogador(nome, camisa, gols)
         x.inserir(j)
       if op == 2:
-        print(x.listar())
+        print(*x.listar())
       if op == 3:
         print(x.artilheiro())
 

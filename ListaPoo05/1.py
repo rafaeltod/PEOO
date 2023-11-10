@@ -45,7 +45,8 @@ class Paciente:
     idade = hoje - self.__nascimento
     anos = idade.days // 365
     meses = idade.days % 365 // 30
-    return f'O paciente tem {anos} ano(s) e {meses} mes(es)'
+    dias = idade.days % 365 % 30
+    return f'O paciente tem {anos} ano(s), {meses} mes(es) e {dias} dia(s)'
 
   def __str__(self):
     nascimento_txt = self.__nascimento.strftime("%d/%m/%Y")

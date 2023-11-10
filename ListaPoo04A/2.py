@@ -12,7 +12,7 @@ class Musica:
     return self.__duracao
 
   def __str__(self):
-    return f'Música: {self.__titulo} | Artista: {self.__artista} | Álbum: {self.__album} | Data de Inclusão: {self.__dataInclusao} | Duração: {self.__duracao}'
+    return f' \n Música: {self.__titulo} | Artista: {self.__artista} | Álbum: {self.__album} | Data de Inclusão: {self.__dataInclusao} | Duração: {self.__duracao} \n '
 
 class PlayList:
   def __init__(self, nome, descricao):
@@ -32,10 +32,13 @@ class PlayList:
       duracao += musica.getduracao()
     return duracao
 
+  def __str__(self):
+    return f'Nome da Playlist: {self.__nome}, Descrição: {self.__descricao}'
+
 class UI:
   @staticmethod
   def menu():
-    print("0 - Fim, 1 - Inserir, 2 - Listar, 3 - Duração")
+    print(" 0 - Fim, 1 - Inserir, 2 - Listar, 3 - Duração ")
     return int(input())
 
   @staticmethod
@@ -56,8 +59,9 @@ class UI:
         musica = Musica(titulo, artista, album, dataInclusao, duracao)
         playlist.inserir(musica)
       if op == 2:
+        print(playlist)
         print(*playlist.listar())
       if op == 3:
-        print(playlist.tempo_total())
+        print(f' \n O Tempo de duração da Playlist é: {playlist.tempo_total()} \n ')
 
 UI.main()
